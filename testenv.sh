@@ -234,7 +234,8 @@ function main() {
             else
                 if ! _minikube_profile_isrunning "${minikube_profile}"; then               
                     echo "Starting cluster ..."
-                    minikube --profile "${minikube_profile}" start \
+                    minikube start \
+                        --profile "${minikube_profile}" \
                         --kubernetes-version "${minikube_k8s_version}" \
                         --driver "${minikube_driver}" \
                         --cpus "${minikube_hw_cpus}" \
